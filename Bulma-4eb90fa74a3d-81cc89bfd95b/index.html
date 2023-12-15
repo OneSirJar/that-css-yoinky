@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task manager</title>
+    <link rel="stylesheet" href="css/bulma.min.css">
+  </head>
+  <body>
+    <nav class="navbar has-shadow is-primary">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src="download.png" alt="logo" style="max-height: 40px;">
+          </a>
+
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="burger">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu" id="burger">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Home
+                  </a>
+                  <a class="navbar-item" >
+                    Teams
+                  </a>
+                  <a class="navbar-item">
+                    Projects
+                  </a>
+            </div>
+        </div>
+    </nav>
+    <article class="panel is-info">
+        <p class="panel-heading">
+          Teams
+        </p>
+        <p class="panel-tabs">
+          <a>All</a>
+          <a class="is-active">Group A</a>
+          <a>Group B</a>
+          <a>Group C</a>
+          <a>Unsorted</a>
+        </p>
+        <div class="panel-block">
+          <p class="control has-icons-left">
+            <input class="input is-info" type="text" placeholder="Search">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+        </div>
+        <a class="panel-block is-active">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          Jeremy Fitzgerald
+        </a>
+        <a class="panel-block">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          Hugh Mungus
+        </a>
+        <a class="panel-block">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          John Oliver
+        </a>
+        <a class="panel-block">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          Leon S. Kennedy
+        </a>
+      </article>
+      <article>
+        <section class="box mx-6">
+            <h1 class="title is-4 ">New task</h1>
+            <div>
+                <label>Input a task</label>
+                <input class="input is-rounded" type="text" placeholder="...">
+            </div>
+            <div class="py-3">
+                <label>Deadline</label><br>
+                <input type="time" class="is-rounded">
+            </div>
+            <button class="button is-success" id="submit">Submit</button>
+        </section>
+    </article>
+    <article>
+        <section class="box mx-6">
+            <h1 class="title is-4 ">Submitted task</h1>
+            <div>
+                <label>Submitted by: John O.</label>
+                <textarea class="textarea" readonly>I would like to add an investigation in Reddit's new API changes to my tasks this week. Permission?</textarea>
+            </div>
+            <div class="py-3">
+                <label>Deadline</label><br>
+                <input type="time" class="is-rounded">
+            </div>
+            <button class="button is-success" id="Accept">Accept</button>
+            <button class="button is-danger" id="Deny">Deny</button>
+        </section>
+    </article>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>bit-manager</strong> by Roald Sap. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          </p>
+        </div>
+      </footer>
+      <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+      
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+      
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+      
+          });
+        });
+      
+      });
+    </script>
+  </body>
+</html>
